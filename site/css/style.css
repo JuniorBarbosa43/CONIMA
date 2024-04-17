@@ -123,6 +123,42 @@ article h2, h1{
     padding: 1.3vh;
     border-radius: 7px;
 }
+/*Contador*/
+#contador {
+    font-size: 36px;
+    text-align: center;
+    margin-top: 100px;
+  }
+/*Barra de Navegação*/
+  .bottom-navbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgb(0, 0, 0, 0.2);
+    color: #fff;
+  }
+  
+  .bottom-navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  
+  .bottom-navbar ul li {
+    display: inline-block;
+    padding: 10px 20px;
+  }
+  
+  .bottom-navbar ul li a {
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  .bottom-navbar ul li a:hover {
+    color: #ccc;
+  }
 
 /*Display PC*/
 @media (max-with: 360px) {
