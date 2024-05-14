@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Coninma</title>
+</head>
+
+<body>
+  <header>
+    <div><img src="assets/Logo/CONINMA 1.png" alt=""></div>
+    <h1>I <span class="letterorange">CON</span>FERÊNCIA DE SOFTWARES <span class="letterorange">IN</span>TELIGENTES E
+      APLICAÇÕES DE APRENDIZADO DE <span class="letterorange">MÁ</span>QUINA</h1>
+  </header>
+  <main>
+
+    <div class="subtitle">
+      <h2>FATEC-MARÍLIA</h2>
+    </div>
+
+    <section class="contagem-regress">
+      <div>
+        <h3>Contador</h3>
+      </div>
+      <div class="countdown-container">
+        <div class="countdown-item-days">
+          <div id="days" class="countdown-number">00</div>
+          <div class="countdown-label">dias</div>
+        </div>
+        <div class="countdown-item">
+          <div id="hours" class="countdown-number">00</div>
+          <div class="countdown-label">horas</div>
+        </div>
+        <div class="countdown-item">
+          <div id="minutes" class="countdown-number">00</div>
+          <div class="countdown-label">minutos</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <footer>
+
+    <nav class="bottom-navbar">
+      <ul>
+        <li><a href="#home"><img src="assets/icon/Home.png" alt=""></a></li>
+        <li><a href="#sobre">Atual</a></li>
+        <li><a href="#contato"><img src="assets/icon/menu.png" alt=""></a></li>
+      </ul>
+    </nav>
+
+  </footer>
+
+  <script>
+    //Contador
+
+    // Definindo a data final da contagem regressiva (formato: ano, mês - 1, dia, hora, minuto, segundo)
+    var endDate = new Date(2024, 4, 20, 0, 0,);
+
+    function updateCountdown() {
+      var now = new Date();
+      var timeDiff = endDate - now;
+
+      if (timeDiff <= 0) {
+        document.getElementById('days').innerText = '00';
+        document.getElementById('hours').innerText = '00';
+        document.getElementById('minutes').innerText = '00';
+      } else {
+        var days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+
+        document.getElementById('days').innerText = padZero(days);
+        document.getElementById('hours').innerText = padZero(hours);
+        document.getElementById('minutes').innerText = padZero(minutes);
+      }
+    }
+
+    function padZero(num) {
+      return (num < 10 ? '0' : '') + num;
+    }
+
+    // Atualizando a contagem regressiva a cada segundo
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+
+</html>
